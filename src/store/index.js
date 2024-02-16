@@ -9,7 +9,7 @@ const actions = {
 
   addPersonServer(context) {
     // axios.get('https://api.uixsj.cn/hitokoto/get?type=social')
-    axios.get('http://localhost:8080/atJapan/students').then(
+    axios.get('http://localhost:8081/atJapan/students').then(
       response => {
         context.commit('ADD_PERSON', response.data)
       },

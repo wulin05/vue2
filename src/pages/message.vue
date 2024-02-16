@@ -59,7 +59,7 @@
     <router-view></router-view>
     <hr>
 
-    <button @click="getStudents">获取本地server1的学生数据</button>
+    <button @click="getStudents" class="getstudent-container">获取本地server1的学生数据</button>
     <ul v-for="p in personList" :key="p.id">
       <li>{{ p.id.slice(0, 5) }} - {{ p.name }}</li>
     </ul>
@@ -116,5 +116,9 @@
       
   }
 </script>
-
-<style></style>
+.
+<style>
+.getstudent-container{
+  margin-bottom: 18px;
+}
+</style>

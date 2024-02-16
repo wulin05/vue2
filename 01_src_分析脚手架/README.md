@@ -17,11 +17,12 @@ cd my-project
 npm run serve
 
 ### vue3安装
-方式一、通过常规的vue_cli脚手架工具(构建工具)创建项目
-   vue create vue3_test  ---> cd vue3_test ---> npm run dev
+方式一、通过传统的vue_cli脚手架工具(构建工具)创建项目vue3_test
+         vue create vue3_test  ---> cd vue3_test ---> npm run serve
 
-方式二、只需要下面这个命令,即可;本质是通过vite来安装和执行 create-vue，并创建项目
-   npm create vue@latest
+方式二、通过vite创建项目vue3_test_vite(里面有步骤..)
+        只需要下面这个命令,即可;本质是vite安装和执行 create-vue
+         npm create vue@latest
 
 #### 官方文档：https://cn.vuejs.org/guide/scaling-up/tooling.html#vite
 #### vite官网：https://vitejs.cn/
