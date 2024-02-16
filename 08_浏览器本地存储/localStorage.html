@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localStorage</title>
+</head>
+
+<body>
+
+  <h2>localStorage</h2>
+
+  <button onclick="saveData()">点我保存数据</button><br><br>
+  <button onclick="readData()">点我读取数据</button><br><br>
+  <button onclick="deleteData()">点我删除数据</button><br><br>
+  <button onclick="clearAllData()">点我清空所有数据</button><br><br>
+
+
+  <script type="text/javascript">
+
+    const person = { name: '张三', age: 18 }
+    const school = [{ name: '北京大学', address: '北京' }, { name: '社会大学', address: '天涯海角' }]
+
+    // 一、保存数据
+    function saveData() {
+      // Application中value中文字如果是黑色,代表字符串,所以下面的666,被保存为字符串,而不是数字
+      localStorage.setItem('msg1', 'hello!')
+      localStorage.setItem('msg2', 666)
+
+      // JSON.stringify()的作用是将对象转换为JSON格式的字符串(本质还是字符串)
+      localStorage.setItem('person', JSON.stringify(person))
+      localStorage.setItem('school', JSON.stringify(school))
+    }
+
+    // 二、读取数据
+    function readData() {
+      console.log(localStorage.getItem('msg1'))
+      console.log(localStorage.getItem('msg2'))
+
+      // 如果直接打印getItem()获取到的数据,都是 字符串 格式
+      const result1 = localStorage.getItem('person')
+      console.log(result1)
+
+      // 所以, JSON.parse()的作用是将JSON格式的字符串转换为对象类型
+      const result2 = localStorage.getItem('school')
+      console.log(JSON.parse(result2))
+
+    }
+
+    // 三、删除(某一条)数据
+    function deleteData() {
+      localStorage.removeItem('msg1')
+    }
+
+    // 四、清空(所有)数据
+    function clearAllData() {
+      localStorage.clear()
+    }
+
+  </script>
+
+</body>
+
+</html>
