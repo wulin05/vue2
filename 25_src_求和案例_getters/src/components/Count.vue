@@ -19,7 +19,7 @@
     <select v-model.number="n">
       <!-- 
         或者通过在value前面加:, 即v-bind:value='1', 让1变成表达式,避免传输的是字符串1的格式 
-        即、<option :value="1">1</option> 的方式也能实现传的是数字1,不是字符串1
+        即、<option :value="1">1</option> 的方式也能实现传的是数字1,不是字符串1,但是明显还是上面的那个好用。
       -->
       <option value="1">1</option>
       <option value="2">2</option>
