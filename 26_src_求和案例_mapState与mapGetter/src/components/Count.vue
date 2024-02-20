@@ -35,6 +35,7 @@
 </template>
 
 <script>
+  // 首先要导入mapState和mapGetters
   import {mapState} from 'vuex'
   import {mapGetters} from 'vuex'
 
@@ -77,7 +78,7 @@
       ...mapState({ he: 'sum', xuexiao: 'school', xueke: 'subject' }),
 
       // 三、借助mapState生成计算属性,从state中读取数据。(数组写法)
-      // 这种写法,就要把插值语法中的就改为 sum、school、subject。用he、xuexiao、xueke只是为了说明上面的对象写法,所以用数组写法明显简洁。
+      // 这种写法,就要把插值语法中的就改为 sum、school、subject。用he、xuexiao、xueke只是为了说明上面的对象写法,所以对于mapState和mapGetter,使用数组写法明显简洁。
       // ...mapState(['sum', 'school','subject']),
 
       /* ******************************************************************** */
