@@ -35,7 +35,7 @@ export default {
       // 因为在App上给Student组件的实例对象vc绑定了atJapan的事件,
       // 所以,在本Student组件上通过this就能轻而易举地拿到atJapn这个事件,但是需要通过$emit() 这个方法来触发！！！
       // 但是,其实最终也是通过上面的button绑定的click事件, 点击该button按钮,触发sendStudentName这个函数,这个函数里面有：this.$emit('atJapan'),
-      // 那不就是第三行的说法,通过$emit()方法又可以触发atJapan事件~~~~,最终由于atJapan事件会调用App中定义的getStudentName函数,那不就等于App
+      // 那不就是第三行的说法,通过$emit()方法触发atJapan事件,通过该事件将数据传给atJapan事件的回调函数getStudentName(App中定义的),最终达成数据传递给App组件。
       this.$emit('atJapan', this.name, this.gender, 999)
 
       // 这个是App又给Student组件绑定了demo自定义事件~~~~,不传数据,只是为了验证 同时解绑多个或全部事件 。
