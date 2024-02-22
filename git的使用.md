@@ -1,25 +1,25 @@
-.env\Scripts\activate.bat
+## .env\Scripts\activate.bat
 
-git submodule update --init --recursive
-git submodule update --remote
-
-
-总结创建与合并分支命令如下：
-
-查看分支：git branch
-
-创建分支：git branch name
-
-切换分支：git checkout name
-
-创建+切换分支：git checkout –b name
-
-合并某分支到当前分支：git merge name
-
-删除分支：git branch –d name
+## git submodule update --init --recursive
+## git submodule update --remote
 
 
-当你从远程库克隆时候，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且远程库的默认名称是origin。
+## 总结创建与合并分支命令如下：
+
+1. 查看分支：git branch
+
+2. 创建分支：git branch name
+
+3. 切换分支：git checkout name
+
+4. 创建+切换分支：git checkout –b name
+
+5. 合并某分支到当前分支：git merge name
+
+6. 删除分支：git branch –d name
+
+
+### 当你从远程库克隆时候，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且远程库的默认名称是origin。
 
 要查看远程库的信息 使用 git remote
 要查看远程库的详细信息 使用 git remote –v
@@ -36,22 +36,22 @@ git config --global credential.UseHttpPath true
 
 
 
-git使用流程：
+## git使用流程：
 
-1.先在develop主分支,pull到最新状态
-2.再基于develop主分支，创建自己的本地分支,比如 feature_项目ID
-3.开发......
-4.开发完成,先从当前开发的分支(feature_项目ID）切换回 develop 主分支
-5.将本地develop主分支继续pull到最新状态(因为可能在你开发的过程中，其他人已经提交并merge代码到develop主分支了，那么自己的develop如果不先
+1. 先在develop主分支,pull到最新状态
+2. 再基于develop主分支，创建自己的本地分支,比如 feature_项目ID
+3. 开发......
+4. 开发完成,先从当前开发的分支(feature_项目ID）切换回 develop 主分支
+5. 将本地develop主分支继续pull到最新状态(因为可能在你开发的过程中，其他人已经提交并merge代码到develop主分支了，那么自己的develop如果不先
   pull的话，可以出现的问题： 1.虽然后续push当前feature_项目ID到远程仓库，并プルリクエストpull request不报错，但是可能实际自己所依赖的
   类或库在远程develop已经被修改过了，那么未来可能项目实际再跑的时候会出问题； 2.在プルリクエストpull request的时候会报错，这时候需要去
   更改代码)-----》这一波要再请教下其他人,为什么？
-6.在本地将develop仓库merge到开发的分支feature_项目ID，再跑代码（测试等等）,这样最后提交代码到远程分支，并PR（プルリクエストpull request）。
+6. 在本地将develop仓库merge到开发的分支feature_项目ID，再跑代码（测试等等）,这样最后提交代码到远程分支，并PR（プルリクエストpull request）。
 
 
 
 
-重要一：
+## 重要一：
 
 要用远程库的内容覆盖本地子模块的修改，可以按照以下步骤操作：
 
@@ -67,7 +67,7 @@ git reset --hard origin/master    # 将子模块的状态重置为与远程库�
 
 
 
-重要二：
+## 重要二：
 
 要将远程库的feature_CMC0014分支的修改更新到atd-common-api-test的common子模块目录，你可以执行以下步骤：
 
@@ -88,7 +88,7 @@ git checkout feature_CMC0014     # 确认当前分支是feature_CMC0014分支
 git pull origin feature_CMC0014  # 将远程的feature_CMC0014分支最新修改拉取到本地
 
 
-重要三：
+## 重要三：
 
 git 放弃并还原当前的修改
 
@@ -96,10 +96,7 @@ https://blog.csdn.net/jiangkejkl/article/details/121909880
 
 
 
-
-
-
-查询sql文：
+## 查询sql文：
     def get_url_info(self, param):
         '''
         ランディングページＵＲＬテーブルを検索し、出力内容を取得する
