@@ -19,12 +19,30 @@ const router = new VueRouter({
     {
       path: '/home',
       component: Home,
-      // Home路由组件的子路由(嵌套路由,套娃开始了...)：News和Message路由组件是在Home路由下的
       children: [
         {
           path: 'news',
           component: News,
+          // *************************************** 给News组件中添加到Detail的路由
+          children: [
+            {
+              name: 'xiangqingNews',
+              path: 'detail',
+              component: Detail,
+              props($route) {
+                // return { id: $route.params.id, title: $route.params.title }
+                return {
+                  id: $route.query.id,
+                  title: $route.query.title,
+                  a: $route.query.a,
+                  b: $route.query.b,
+                }
+              }
+            }
+          ]
+          // ****************************************
         },
+
         {
           path: 'message',
           component: Message,
@@ -35,6 +53,7 @@ const router = new VueRouter({
               path: 'detail',
               // params传参对应的path写法
               // path: 'detail/:id/:title',
+
               component: Detail,
 
               // props的第一种写法,值为对象,该对象中的所有key-value都会以props的形式传给Detail组件
@@ -54,25 +73,6 @@ const router = new VueRouter({
                   b: 'hello'
                 }
               }
-
-              /*
-              所以,这边我自己总结一波：
-              个人觉得最简便的方法是第二种,但是第三种我个人比较喜欢,因为不管是query还是params哪种传参都可以用,步骤是：
-              1. message.vue中使用写法二, 即、query方式传数据, 这样的话, 这边的path就直接用path:'detail',不用params的path写法,需要占位符,麻烦;
-              2. 然后就用目前的上面的props($route)的return写法,完美~~~
-
-              关于props第三种写法的解构赋值写法：
-              props(query) {
-                return { id: query.id, title: query.title }
-              }
-
-              连续结构赋值
-              props(query:{id, title}) {
-                return { id, title }
-              }
-
-              */
-
             }
           ]
         }

@@ -11,7 +11,7 @@ const actions = {
    所以,
    可以让Count.vue的关于这两个的dispatch,直接跟后厨联系commit,那么这两个就可以注释掉了
   */
-  // jia:function(){}, 但没必要上面那么复杂,简写成：
+  // jia:function(){}, 但可简写成：
   // jia(context, value) {
   //   // 官方形参用context(上下文对象), 和value(n的值)
   //   console.log('actions中的jia被调用了', context, value)
@@ -22,7 +22,7 @@ const actions = {
   //   context.commit('JIAN', value)
   // },
 
-  // 官方形参用context(上下文对象), 和value(n的值); 
+  // 官方形参用context(上下文对象), 和value(n的值);  注意和下面的mutations配置项中的JIA、JIAN所接收的形参是state、value
   // 由于上面jia的actions代码不需要了,被注释掉了,关于context的说明也就被注释掉了,这边补一下。
   jiaOdd(context, value) {
     if (context.state.sum % 2) {

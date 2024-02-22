@@ -8,9 +8,9 @@
 1. vuex3  <===> Vue2
 2. vuex4  <===> Vue3
 
-### 所以在Vue2中要使用vuex插件版本,要指定版本是vuex3: npm i vuex@3
+### 所以在Vue2中要使用vuex插件版本,要指定版本是vuex3:  npm i vuex@3
 
-## 三、在main.js中引入并使用vuex插件,全局vm和vc就有了$store属性了
+## 三、在main.js中引入并使用vuex插件在store目录的index.js文件中所创建并暴露store对象,那么全局vm和vc就有了$store属性了 ！！！
 
 ## 四、官方写法：
 1. 在src目录下创建store文件夹,文件夹下有index.js

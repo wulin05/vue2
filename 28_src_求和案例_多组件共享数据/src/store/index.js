@@ -24,7 +24,6 @@ const actions = {
 
 const mutations = {
   JIA(state, value) {
-    console.log('mutations中的"JIA"被执行了！')
     state.sum += value
   },
 
@@ -42,7 +41,7 @@ const state = {
   sum: 0,
   school: '凤山大学',
   subject: '养猪',
-  // ##### 本节内容：person.vue
+  // ##### 本节内容所说的共享数据：person.vue和Count.vue两个组件都要用到personList...
   personList: [
     { id: nanoid(), name: '张三' },
     { id: nanoid(), name: '李四' },

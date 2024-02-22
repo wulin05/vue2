@@ -2,7 +2,7 @@
     <div>
      
       <div class="row">
-        <!-- banner组件标签: 一般组件 -->
+        <!-- 使用banner组件标签: 一般组件 -->
         <Banner/>
       </div>
       <div class="row">
@@ -13,7 +13,7 @@
             <a class="list-group-item" href="./home.html">Home</a> -->
 
             <!-- Vue的vue-router插件借助router-link标签实现路由的切换: 其实最后在页面上还是转换成a标签 -->
-            <router-link class="list-group-item" active-class="active" to="/about">About</router-link>
+            <router-link class="list-group-item" active-class="active" :to="{ name: 'guanyu' }">About</router-link>
             <router-link class="list-group-item" active-class="active" to="/home">Home</router-link>
           </div>
         </div>

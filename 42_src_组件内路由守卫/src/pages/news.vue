@@ -36,7 +36,7 @@
     //   clearInterval(this.timerId)
     // },
 
-    // ########################## 本节重点内容： activated、deactivated 生命周期钩子
+    // activated、deactivated 生命周期钩子
     activated() {
       this.timerId = setInterval(() => {
       console.log('News路由组件激活了')

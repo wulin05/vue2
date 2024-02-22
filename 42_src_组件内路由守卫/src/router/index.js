@@ -10,12 +10,13 @@ import Detail from '../pages/Detail'
 
 // 创建一个路由、之前是这样的： export default new VueRouter({...}) , 意味着创建并立马暴露路由出去(没机会协商下做一些路由守卫、即权限的设定)。
 const router = new VueRouter({
+  //###### 路由history模式, 默认是hash模式
+  mode: 'history',
   routes: [
     {
       name: 'guanyu',
       path: '/about',
       component: About,
-      // ####### 加了isAuth: true的配置项,让about组件也路由鉴权; 在about.vue组件中配置了
       meta: { isAuth: true, title: '关于' }
     },
     {
@@ -30,18 +31,18 @@ const router = new VueRouter({
           component: News,
           meta: { isAuth: true, title: '新闻' },
           // 3. 独享路由守卫: 只有前置独享路由守卫,没有后置独享路由守卫
-          // beforeEnter: (to, from, next) => {
-          //   console.log('独享路由守卫beforeEnter的to、from、next参数:', to, from, next)
-          //   if (to.meta.isAuth) {
-          //     if (localStorage.getItem('student') === 'linwu') {
-          //       next()
-          //     } else {
-          //       alert('姓名不是linwu,无权查看news和message页面')
-          //     }
-          //   } else {
-          //     next()
-          //   }
-          // }
+          beforeEnter: (to, from, next) => {
+            console.log('独享路由守卫beforeEnter的to、from、next参数:', to, from, next)
+            if (to.meta.isAuth) {
+              if (localStorage.getItem('news') === 'news') {
+                next()
+              } else {
+                alert('News页面使用独享路由守卫: 值为news才有权限查看...')
+              }
+            } else {
+              next()
+            }
+          }
         },
         {
           name: 'xiaoxi',
@@ -90,20 +91,20 @@ const router = new VueRouter({
   在上面创建路由之后,下面暴露路由之前,跟路由商量商量,加一个路由守卫,借助router的API:beforeEach(回调函数)
   表示：在每一次路由切换之前 和 初始化的时候,都会调用API:beforeEach
 */
-// router.beforeEach((to, from, next) => {
-//   console.log('前置路由守卫beforeEach的to和from参数:', to, from)
-//   // if (to.name === 'xinwen' || to.name === 'xiaoxi') {              // 可以用命名路由name,如果用了,那么所有的路由都需要命名name
-//   // if (to.path === '/home/news' || to.path === '/home/message') {   // 这种还是不好用....
-//   if (to.meta.isAuth) {                                               // 上面给需要鉴权的路由配置的isAuth在这边就应用上了....
-//     if (localStorage.getItem('student') === 'linwu') {
-//       next()
-//     } else {
-//       alert('姓名不是linwu,无权查看news和message页面')
-//     }
-//   } else {
-//     next()
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  console.log('前置路由守卫beforeEach的to和from参数:', to, from)
+  // if (to.name === 'xinwen' || to.name === 'xiaoxi') {              // 可以用命名路由name,如果用了,那么所有的路由都需要命名name
+  // if (to.path === '/home/news' || to.path === '/home/message') {   // 这种还是不好用....
+  if (to.meta.isAuth) {                                               // 上面给需要鉴权的路由配置的isAuth在这边就应用上了....
+    if (localStorage.getItem('global') === 'global') {
+      next()
+    } else {
+      alert('全局前置路由守卫: 值为global才有权限查看...')
+    }
+  } else {
+    next()
+  }
+})
 
 /*
   2. 全局后置路由守卫

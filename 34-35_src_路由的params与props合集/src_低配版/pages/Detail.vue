@@ -17,9 +17,10 @@
 
   export default {
     name: 'Detail',
-    // props: ['a', 'b'],
+    // props: ['a', 'b'],   
 
-    // 路由配置中使用 props的第二种(message.vue用params传数据这个才支持)、第三种写法,这边就可以用props来接收id和title,这样上面的插值语法就能直接用id和title了
+    // 路由配置中使用 props的第二种(如果是使用props: true这种路由参数写法的话,
+    // 在message.vue中必须要用params传递数据才可以)、以及第三种写法, 这边就可以用props来接收id和title,这样上面的插值语法就能直接用id和title了
     props: ['id', 'title', 'a', 'b'],
 
     // computed: {

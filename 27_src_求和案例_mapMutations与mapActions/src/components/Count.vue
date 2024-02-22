@@ -66,7 +66,7 @@
       ...mapState({ he: 'sum', xuexiao: 'school', xueke: 'subject' }),
 
       // 三、借助vuex插件的mapState生成计算属性,从state中读取数据。(数组写法)
-      // 这种写法,就要把插值语法中的就改为 sum、school、subject。用he、xuexiao、xueke只是为了说明上面的对象写法,所以用数组写法明显简洁。
+      // 这种写法,就要把插值语法中的变量改为 sum、school、subject。用he、xuexiao、xueke只是为了说明上面的对象写法,所以用数组写法明显简洁。
       // ...mapState(['sum', 'school','subject']),
 
       /* ******************************************************************** */
@@ -117,6 +117,7 @@
        （1）代表原先的increment和decrement的函数名,现在是JIA、JIAN,
        （2）store目录的index.js文件中的mutations是处理函数JIA、JIAN; 这样也明确了,数组必须使用'JIA','JIAN',
             所以,数组写法的话,那么上面的@click="increment(n)"、@click="decrement(n)", 同样也是需要明确传入参数是n,不是事件event：
+            并且回调函数increment、decrement也要改成JIA、JIAN、即：
             @click="JIA(n)"、@click="JIAN(n)"
         
        为了留有记录,这边就不使用数组写法了,还是用上面的对象写法

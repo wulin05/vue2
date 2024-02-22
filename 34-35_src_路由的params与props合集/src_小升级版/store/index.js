@@ -6,10 +6,9 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 const actions = {
-
   addPersonServer(context) {
     // axios.get('https://api.uixsj.cn/hitokoto/get?type=social')
-    axios.get('http://localhost:8081/atJapan/students').then(
+    axios.get('http://localhost:8080/atJapan/students').then(
       response => {
         context.commit('ADD_PERSON', response.data)
       },
@@ -17,12 +16,10 @@ const actions = {
         alert(error.message)
       }
     )
-  },
-
+  }
 }
 
 const mutations = {
-
   ADD_PERSON(state, value) {
     value.forEach(item => {
       // 检查是否有重复id
@@ -38,7 +35,6 @@ const mutations = {
       }
     })
   },
-
 }
 
 const state = {

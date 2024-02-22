@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  // 为了说明本节内容,完全不使用mapState、mapGetters、mapMutations、mapActions的方式来简写代码
+  // person组件故意不使用mapState、mapGetters、mapMutations、mapActions的方式来简写代码,与Count.vue对比..
   import {nanoid} from 'nanoid'
 
   export default {

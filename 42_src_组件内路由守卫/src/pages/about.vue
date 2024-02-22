@@ -28,10 +28,10 @@
     beforeRouteEnter (to, from, next) {
       console.log('About---beforeRouteEnter的to、from:', to, from)
       if (to.meta.isAuth) {
-        if (localStorage.getItem('student') === 'linwu') {
+        if (localStorage.getItem('about') === 'about') {
           next()
         } else {
-          alert('姓名不是linwu,无权查看news和message页面')
+          alert('About页面使用组件内路由守卫: 值为about才有权限查看...')
         }
       } else {
         next()
