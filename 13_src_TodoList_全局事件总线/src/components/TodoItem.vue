@@ -8,7 +8,10 @@
       <input type="checkbox" :checked="todo.done" @change="handleCheck(todo.id)"/>
      
       <!-- 直接用v-model双向绑定todo.done,点击 -->
-      <!-- 但是不建议用v-model,因为todo是props传过来的,props是不可以修改的,但是由于props是浅监视,所以对于复杂类型的属性改了,vue检测不到props的变化,但是如果props传过来的数据是简单类型,那么就会报错了!!! -->
+      <!-- 但是不建议用v-model,因为todo是props传过来的,props是不可以修改的,
+           但是由于props是浅监视,所以对于复杂类型的属性改了,vue检测不到props的变化,
+           但是如果props传过来的数据是简单类型,那么就会报错了!!! 
+      -->
       <!-- 另外,:checked="todo.done",通过todo.done的布尔值来决定checked是否出现,如果出现,那么就勾选,反之,不勾选 -->
       <!-- <input type="checkbox" v-model="todo.done"/> -->
 
@@ -35,7 +38,7 @@ export default {
     // 点击选框的change事件,调用handleCheck函数,函数内是使用了在App组件上定义,并通过父组件TodoList作为桥梁传递过来的checkTodo函数
     handleCheck(id){
       //checkTodo函数的功能是：通知App组件将对应该id值的todo对象的done值取反
-      // 下行是自定义事件的用法,下面的checkTodo是从App传过来的函数
+      // 下面是自定义事件的用法,checkTodo是从App传过来的函数
       // this.checkTodo(id)
       // 下面是事件总线的写法,checkTodo是App给总线$bus添加的事件名
       this.$bus.$emit('checkTodo', id)
@@ -45,7 +48,7 @@ export default {
     handleDelete(id){
       // 注意使用confirm来提醒哦~,不用alert
       if(confirm('确定删除吗?')){
-        // 同理,下面是自定义事件的写法,deleteTodo是App传过来的函数
+        // 下面是自定义事件的写法,deleteTodo是App传过来的函数
         // this.deleteTodo(id)
         // 下面是事件总线的写法,deleteTodo是App给总线$bus添加的事件名
         this.$bus.$emit('deleteTodo', id)

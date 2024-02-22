@@ -26,8 +26,8 @@ new Vue({
 })
 
 /*
-6.创建components目录,并创建相关的vue组件：about.vue和home.vue是路由组件; banner.vue是一般组件
-  所以,创建pages目录,存放路由组件,即、将about.vue和home.vue存放到这个pages目录下
+6.创建components目录,存放一般组件,即、将banner.vue放到该目录下
+  创建pages目录,存放路由组件,即、将about.vue和home.vue等等路由组件存放到该目录下
 */
 
 // 上边有部分是vuex插件的内容,我只是想在本节运用上,跟本节关系不大。

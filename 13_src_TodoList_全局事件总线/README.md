@@ -6,7 +6,7 @@
 3. 但是TodoItem是App的孙组件,所以关于TodoItem组件想要 勾选/取消勾选 、删除任务这两个
    操作，需要将id传给App组件去修改todos数组的数据, 原先的方式是通过App组件将函数传给
    子组件TodoList,再传给TodoItem的方式, 所以：
-   本机的事件总线就是解决App组件和TodoItem组件直接进行数据传递。
+   本节的事件总线就是解决App组件和TodoItem组件直接进行数据传递。
 
 4. 思路： 由于是TodoItem想要传 3点所说的 id给 App去修改数组的数据,所以, 
 

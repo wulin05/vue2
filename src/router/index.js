@@ -10,12 +10,13 @@ import Detail from '../pages/Detail'
 
 // 创建一个路由、之前是这样的： export default new VueRouter({...}) , 意味着创建并立马暴露路由出去(没机会协商下做一些路由守卫、即权限的设定)。
 const router = new VueRouter({
+  //###### 路由history模式, 默认是hash模式
+  mode: 'history',
   routes: [
     {
       name: 'guanyu',
       path: '/about',
       component: About,
-      // ####### 加了isAuth: true的配置项,让about组件也路由鉴权; 在about.vue组件中配置了
       meta: { isAuth: true, title: '关于' }
     },
     {

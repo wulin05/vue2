@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     sendStudentName(){
-      // 总线：School组件给事件总线$bus绑定了hello自定义事件,Student组件当然也可以通过总线$bus去触发事件啦....
+      // 总线：School组件给事件总线$bus绑定了hello自定义事件,Student组件当然就可以通过总线$bus去触发事件啦....
       this.$bus.$emit('hello', this.name)
     }
   },
