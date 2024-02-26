@@ -2,7 +2,7 @@
 
 # 本章目录的demo是根据下面的操作,保存到这里的,是后端用的,跟Vue没关系。
 
-在本地模拟服务器,运行前端build的成功dist：	 
+在本地模拟服务器,运行前端build的成功dist目录：	 
 1.桌面创建demo目录
 2.vscode打开
 3.cli命令：npm init
